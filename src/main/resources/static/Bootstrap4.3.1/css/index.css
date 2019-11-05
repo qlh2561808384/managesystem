@@ -1,0 +1,119 @@
+body {
+    background-image: url("../image/3.jpg");
+}
+/*#div_div {
+    width: 400px;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: -80px;
+    top: 50%;
+    left: 50%;
+ !*   display: block;
+    z-index: 2000;
+    border: 1px solid #006699;*!
+}
+#div_p {
+    width: 400px;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: -80px;
+    top: 40%;
+    left: 50%;
+    display: block;
+    z-index: 2000;
+    border: 1px solid #006699;
+}
+#div_p p {
+    text-align: center;
+    color: #00FF00;
+    font-size: 30px;
+}
+#yhm {
+    color: #00FF00;
+}
+#mm {
+    color: #00FF00;
+}*/
+/*
+    z-index：属性指定两件事:
+            当前元素的堆叠顺序
+            当前元素是否建立新的堆叠上下文
+    属性：
+        auto 默认。堆叠顺序与父元素相等。
+        < integer > 设置元素的堆叠顺序。
+        inherit 规定应该从父元素继承 z-index 属性的值。
+*/
+#div_form {
+    width: 400px;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: -80px;
+    top: 40%;
+    left: 50%;
+    /*display: block;*/
+    z-index: auto;
+    /*border: 1px solid #006699;*/
+    /*background: #888888;*/
+    background: rgba(0, 0, 0, 0.03);
+
+}
+
+#FORM{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.zhmm {
+    padding-right: 0px;
+}
+
+.text{
+    text-align: center;
+}
+.card {
+    width: 400px;
+    font: 14px Roboto;
+    background: rgba(0, 0, 0, 0.05);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 400px;
+    position: absolute;
+    margin-left: 0px;
+    margin-top: -43px;
+}
+.remember {
+    padding-right: 250px;
+}
+.register {
+    margin-top: -40px;
+    float: right;
+    padding-right: 50px;
+}
+.rege {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: rgba(0, 0, 0, 0);
+    border-color: #000000;
+}
+.log {
+    padding-left: 110px;
+    padding-right: 110px;
+    margin-right: 100px;
+    background-color: #2A9FD6;
+    border-color: #2A9FD6;
+    /*background: rgba(0, 0, 0, 0);*/
+}
+.forget {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: rgba(0, 0, 0, 0);
+    border-color: #000000;
+}
+.forgetdiv {
+    margin-top: -40px;
+    float: right;
+    padding-right: 5px;
+}
