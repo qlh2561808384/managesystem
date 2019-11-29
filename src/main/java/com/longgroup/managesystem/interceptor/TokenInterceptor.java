@@ -1,4 +1,3 @@
-/*
 package com.longgroup.managesystem.interceptor;
 
 import com.auth0.jwt.JWT;
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
-*/
 /**
  *
  *      自定义Token拦截器
@@ -28,8 +26,7 @@ import java.lang.reflect.Method;
  * @author qlh
  * @creed: Talk is cheap,show me the code
  * @date
- *//*
-
+ */
 
 public class TokenInterceptor implements HandlerInterceptor {
     @Autowired
@@ -92,4 +89,3 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     }
 }
-*/

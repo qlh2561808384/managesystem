@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @PassToken
 public class redirectController {
-    @RequestMapping("/")
+/*    @RequestMapping("/")
     @PassToken
     public String login(){
         return "redirect:index.html";
-    }
+    }*/
 }

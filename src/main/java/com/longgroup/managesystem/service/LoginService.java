@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface LoginService {
 //    int login(String username,String password);
-List<Users> login(String username, String password);
+    List<Users> login(String username, String password);
 
     Users findUserById(String userid);
 }
