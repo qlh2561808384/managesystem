@@ -21,10 +21,14 @@ public class LoginController {
 //            int i = loginService.login(username, password);
             //查询
             List login = loginService.login(username, password);
-            result = new Result(true, login);
+            if (login.size() == 0) {
+                result = new Result(false, "账号或密码错误");
+            }else {
+                result = new Result(true, login);
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            result = new Result(false, "查询失败");
+            result = new Result(false, "登陆失败，失败原因:" + e.getMessage());
         }
         return result;
     }

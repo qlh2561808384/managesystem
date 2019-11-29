@@ -1,5 +1,6 @@
 package com.longgroup.managesystem.service.serviceImpl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.longgroup.managesystem.domain.Users;
 import com.longgroup.managesystem.mapper.LoginMapper;
 import com.longgroup.managesystem.service.LoginService;
@@ -16,17 +17,20 @@ public class LoginServiceImpl implements LoginService {
     private LoginMapper loginMapper;
 
     @Override
-    public List login(String username, String password) {
-        Users users = new Users();
-        users.setUsername(username);
-        users.setPassword(password);
-        //新增
-        int insert = loginMapper.insert(users);
+    public List<Users> login(String username, String password) {
         //查询
-        Map<String, Object> map = new HashMap<>();
-        map.put("username", username);
-        map.put("password",password);
-        List<Users> users1 = loginMapper.selectByMap(map);
-        return users1;
+         QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("username", username);
+        queryWrapper.eq("password", password);
+        List<Users> list = loginMapper.selectList(queryWrapper);
+        return list;
+    }
+
+    @Override
+    public Users findUserById(String userid) {
+       /* QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("userid", userid);*/
+        Users users = loginMapper.selectById(userid);
+        return users;
     }
 }
