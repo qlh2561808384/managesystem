@@ -73,9 +73,20 @@
         }
         api.login(username, pwd).then((data) => {
             if(data.success){
-                window.location.href = "../login/login.html";
+                console.log(data.content);
+                console.log(data.content.token);
+                console.log(data.content.user);
+                console.log(data.content.user.username);
+               /* localStorage.setItem("token",data.content.token);
+                localStorage.setItem("username",data.content.user.username);
+                localStorage.setItem("userid",data.content.user.userid);*/
+                window.location.href = "../home";
             }else {
-                layer.msg(data.content,{icon: 2});
+                if (data.message !== undefined) {
+                    layer.msg(data.message,{icon: 2});
+                }else {
+                    layer.msg(data.content,{icon: 2});
+                }
             }
         });
     });

@@ -9,6 +9,7 @@ const api = {
                     username: username,
                     password: password
                 }),
+                headers:{'token':localStorage.getItem("token")},
                 contentType: 'application/json',
                 dataType: 'json',
                 cache: false,
