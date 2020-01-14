@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class redirectController {
     @RequestMapping("/home")
-    @UserLoginToken
+    @PassToken
     public String login(){
         return "redirect:login/login.html";
     }

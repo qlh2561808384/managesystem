@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>精康科技</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../layui-v2.5.5/layui/layui.js"></script>
+    <script type="text/javascript" src="../pageJs/public.js"></script>
+    <script type="text/javascript" src="../Bootstrap4.3.1/js/md5.js"></script>
+    <link rel="icon" type="image/x-icon" href="../Bootstrap4.3.1/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+                <!--                <p style="color: red;text-align: right">*表示必填</p>-->
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="txt_departmentname">登录名<span style="color: red">*</span></label>
+                    <input type="text" name="txt_departmentname" class="form-control" id="txt_departmentname" placeholder="请输入要注册的登录名" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="txt_parentdepartment">密码<span style="color: red">*</span></label>
+                    <input type="password" name="txt_parentdepartment" class="form-control" id="txt_parentdepartment" placeholder="请输入要注册的密码" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="txt_checkpwd">确认密码<span style="color: red">*</span></label>
+                    <input type="password" name="txt_checkpwd" class="form-control" id="txt_checkpwd" placeholder="请输入确认密码" autocomplete="off">
+                </div>
+                <!--<div class="form-group">
+                    <label for="txt_departmentlevel">所属单位<span style="color: red">*</span></label>
+                    <input type="text" name="txt_departmentlevel" class="form-control" id="txt_departmentlevel" placeholder="请输入要注册的所属单位" autocomplete="off" >
+                </div>
+                <div class="form-group">
+                    <label for="txt_statu">标记<span style="color: red">*</span></label>
+                    <input type="text" name="txt_statu" class="form-control" id="txt_statu" placeholder="请输入要注册的标记" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="txt_code">注册码<span style="color: red">*</span></label>
+                    <input type="text" name="txt_code" class="form-control" id="txt_code" placeholder="请输入注册码" autocomplete="off">
+                </div>-->
+                <div class="form-group" id="showhidden">
+                    <label>选择日期<span style="color: red">*</span></label>
+                    <!--指定 date标记-->
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control"  placeholder="请输入注册时间"/><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>---->
+                <button type="button" id="btn_submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>注册</button>
+                <!--      data-dismiss="modal" 是设置input的点击事件  点击完 让表单消失-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="application/javascript">
+    $(function () {
+        // $("#showhidden").hide();
+        $('#myModal').modal();
+        $('#datetimepicker1').datetimepicker({
+            format: 'YYYY-MM-DD HH:mm:ss',
+            locale: moment.locale('zh-cn')
+        });
+    });
+</script>
+</body>
+</html>
