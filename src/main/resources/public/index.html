@@ -17,48 +17,29 @@
 <!--<div class="text card">用户登陆</div>-->
 <div id="div_form">
     <span class="text card">用户登陆</span>
-    <form class="form-horizontal" role="form"  id="FORM">
+    <form class="form-horizontal card-body" role="form"  id="FORM">
         <div class="form-group">
-            <label for="firstname" class="col-sm-2 control-label zhmm">账号</label>
-            <div class="col-sm-9 zhmminput">
+            <span for="firstname" class="col-sm-2 control-label">账号</span>
+            <div class="col-sm-9">
                 <input type="text" class="form-control" id="firstname" placeholder="请输入账号" autocomplete="off">
             </div>
         </div>
         <div class="form-group">
-            <label for="lastname" class="col-sm-2 control-label zhmm">密码</label>
-            <div class="col-sm-9 zhmminput">
+            <span for="lastname" class="col-sm-2 control-label">密码</span>
+            <div class="col-sm-9">
                 <input type="password" class="form-control" id="lastname" placeholder="请输入密码" autocomplete="off">
             </div>
         </div>
-        <div class="form-group remember">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> 请记住我
-                    </label>
-                </div>
+        <div class="form-group">
+            <a class="btn btn-default QQ" href="javascript:void(0)"><img src="../Bootstrap4.3.1/image/QQ.png" class="image">QQ</a>
+            <a class="btn btn-default weiBo" href="javascript:void(0)"><img src="../Bootstrap4.3.1/image/weiBo.png" class="weibo">微博</a>
+            <a class="btn btn-default google" href="javascript:void(0)"><img src="../Bootstrap4.3.1/image/google.png" class="google-icon">谷歌</a>
+            <div class="pull-right">
+                <a class="btn btn-default rege" href="javascript:void(0)" id="register">注册</a>
+                <a class="btn btn-default forget" href="javascript:void(0)">忘记密码</a>
             </div>
         </div>
-        <div  class="form-group register">
-            <div class="col-sm-offset-2 col-sm-10">
-                <label>
-<!--                    <button type="submit" class="btn btn-default rege">注册</button>-->
-                    <a class="btn btn-default rege" href="javascript:void(0)" id="register">注册</a>
-                </label>
-            </div>
-        </div>
-        <div  class="form-group forgetdiv">
-            <div class="col-sm-offset-2 col-sm-10">
-                <label>
-<!--                    <button type="submit" class="btn btn-default forget">忘记密码</button>-->
-                    <a class="btn btn-default forget" href="javascript:void(0)">忘记密码</a>
-                </label>
-            </div>
-        </div>
-        <fo class="form-group submit">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-default log" id="submitLogin">登录</button>
-        </div>
+        <button type="button" class="btn btn-default log" id="submitLogin">登录</button>
     </form>
 </div>
 <script type="text/javascript">
@@ -77,9 +58,9 @@
                 console.log(data.content.token);
                 console.log(data.content.user);
                 console.log(data.content.user.username);
-               /* localStorage.setItem("token",data.content.token);
+                localStorage.setItem("token",data.content.token);
                 localStorage.setItem("username",data.content.user.username);
-                localStorage.setItem("userid",data.content.user.userid);*/
+                localStorage.setItem("userid",data.content.user.userid);
                 window.location.href = "../home";
             }else {
                 if (data.message !== undefined) {

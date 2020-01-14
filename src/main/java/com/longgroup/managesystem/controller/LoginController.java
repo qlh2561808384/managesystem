@@ -25,7 +25,7 @@ public class LoginController {
  * @creed: Talk is cheap,show me the code
  * @date
  */
-    @UserLoginToken
+//    @UserLoginToken
     @RequestMapping("/login/{id}")
     public Result login(@PathVariable(value="id") String id, @RequestBody Map map){
         JSONObject jsonObject=new JSONObject();
