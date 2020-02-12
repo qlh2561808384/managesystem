@@ -13,10 +13,10 @@ public class Users implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private long userid;
-  private String password;
+  private long id;
   private String username;
-  private String time;
+  private String password;
+  private String createTime;
   private long status;
 
 }
