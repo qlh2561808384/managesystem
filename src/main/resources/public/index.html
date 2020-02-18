@@ -9,7 +9,9 @@
     <script type="text/javascript" src="../Bootstrap4.3.1/js/md5.js"></script>
     <script type="text/javascript" src="../pageJs/index.js"></script>
     <script type="text/javascript" src="../pageJs/public.js"></script>
+    <script type="text/javascript" src="../Bootstrap4.3.1/js/Particleground.js"></script>
 
+    <link rel="icon" type="image/x-icon" href="../Bootstrap4.3.1/images/favicon.ico">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Bootstrap4.3.1/css/index.css">
 </head>
@@ -43,6 +45,11 @@
     </form>
 </div>
 <script type="text/javascript">
+    //粒子背景特效
+    $('body').particleground({
+        dotColor: '#E8DFE8',
+        lineColor: '#133b88'
+    });
     $("#submitLogin").click(function () {
         const username = $("#firstname").val();
         const password = $("#lastname").val();
@@ -60,7 +67,7 @@
                 console.log(data.content.user.username);
                 localStorage.setItem("token",data.content.token);
                 localStorage.setItem("username",data.content.user.username);
-                localStorage.setItem("userid",data.content.user.userid);
+                localStorage.setItem("userid",data.content.user.id);
                 window.location.href = "../home";
             }else {
                 if (data.message !== undefined) {

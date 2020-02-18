@@ -8,6 +8,7 @@
     <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="../layui-v2.5.5/layui/layui.js"></script>
+    <script type="text/javascript" src="../pageJs/index.js"></script>
     <script type="text/javascript" src="../pageJs/public.js"></script>
     <script type="text/javascript" src="../Bootstrap4.3.1/js/md5.js"></script>
     <link rel="icon" type="image/x-icon" href="../Bootstrap4.3.1/images/favicon.ico">
@@ -52,7 +53,7 @@
                     <label>选择日期<span style="color: red">*</span></label>
                     <!--指定 date标记-->
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control"  placeholder="请输入注册时间"/><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        <input type='text' class="form-control" id="createTime"  placeholder="请输入注册时间"/><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                 </div>
             </div>
@@ -74,6 +75,52 @@
         });
     });
     $("#btn_submit").click(function () {
+        let name = $("#txt_departmentname").val();
+        let password = $("#txt_parentdepartment").val();
+        let checkpassword = $("#txt_checkpwd").val();
+        let md5password = $.md5(password);
+        let createTime = $("#createTime").val();
+        if(isEmpty(name,"")){
+           return layer.msg("登录名不能为空",{icon: 2});
+        }
+        if(isEmpty(password,"")){
+            return layer.msg("密码不能为空",{icon: 2});
+        }
+        if(isEmpty(checkpassword,"")){
+            return layer.msg("确认密码不能为空",{icon: 2});
+        }
+        if(!isEmpty(password,checkpassword)){
+            return layer.msg("密码与确认密码不一致，请确认",{icon: 2});
+        }
+        if (isEmpty(createTime,"")) {
+            return layer.msg("日期不能为空", {icon: 2});
+        }
+        api.checkUsername(name).then((response) => {
+            if (response.length > 0) {
+                return layer.msg("该用户名已经被注册");
+            }else {
+                api.regist(name, md5password, createTime).then((res) => {
+                    if(res.success){
+                        layer.msg("注册成功", {
+                            time: 0 //不自动关闭
+                            , btn: ['确定'],
+                            success: function(layero){
+                                layero.find('.layui-layer-btn').css('text-align', 'center')
+                            }
+                            , yes: function (index) {
+                                let par = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                                parent.layer.close(par);  // 关闭layer
+                                window.parent.location.reload(); //刷新父页面
+                            }
+                        });
+                    }else {
+                        layer.msg("注册失败，失败原因:" + res.content, {icon: 2});
+                    }
+                }).catch((err)=>{
+                    console.error(err);
+                });
+            }
+        });
 
     });
 </script>

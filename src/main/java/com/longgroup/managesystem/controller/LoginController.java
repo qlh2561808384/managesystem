@@ -8,6 +8,9 @@ import com.longgroup.managesystem.service.TokenService;
 import com.longgroup.managesystem.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -47,5 +50,29 @@ public class LoginController {
         }
     }
 
+    @RequestMapping("/register")
+    public Result register(String name,String password,String time){
+        Result result = null;
+        try {
+            loginService.register(name,password,time);
+            result = new Result(true, "");
+        } catch (Exception e) {
+            result = new Result(false, e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @RequestMapping("/checkUsername")
+    public List<Users> checkUsername(String name){
+        List<Users> list = new ArrayList<>();
+        try {
+            Users users = loginService.checkUsername(name);
+            list.add(users);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
 }

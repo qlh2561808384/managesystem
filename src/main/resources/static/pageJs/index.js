@@ -58,11 +58,35 @@ const api = {
             }
         });
     },
-    regist: () => {
-
+    regist: (name,psw,createrTime) => {
+        return new Promise((resolve, reject) => {
+            $.post('../login/register', {
+                name: name,
+                password: psw,
+                time: createrTime
+            }, (data) => {
+                resolve(data);
+            });
+        });
+    },
+    checkUsername: (name) => {
+        return new Promise((resolve, reject) => {
+            $.post('../login/checkUsername', {
+                name: name,
+            }, (data) => {
+                resolve(data);
+            });
+        });
     }
 };
 $(function () {
     api.keyDowm();
     $("#firstname").focus();
 });
+let isEmpty = (parma1,parma2) => {
+    if (parma1 === parma2) {
+        return true;
+    }else {
+        return false;
+    }
+};
