@@ -58,12 +58,13 @@ const api = {
             }
         });
     },
-    regist: (name,psw,createrTime) => {
+    regist: (name,psw,createrTime,email) => {
         return new Promise((resolve, reject) => {
             $.post('../login/register', {
                 name: name,
                 password: psw,
-                time: createrTime
+                time: createrTime,
+                email: email
             }, (data) => {
                 resolve(data);
             });

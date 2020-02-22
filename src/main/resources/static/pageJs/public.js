@@ -9,3 +9,4 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         , slider = layui.slider; //滑块
 
 });
+let username = localStorage.getItem("username");

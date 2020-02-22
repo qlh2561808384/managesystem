@@ -1,20 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>龙少管理系统</title>
+    <title>文件管理系统</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../ssi-uploader/js/ssi-uploader.js"></script>
     <script type="text/javascript" src="../layui-v2.5.5/layui/layui.js"></script>
-    <link rel="stylesheet" href="../layui-v2.5.5/layui/css/layui.css">
+    <script type="text/javascript" src="../pageJs/public.js"></script>
+    <script type="text/javascript" src="../pageJs/Ajax.js"></script>
+    <script type="text/javascript" src="../pageJs/login.js"></script>
+
     <link rel="icon" type="image/x-icon" href="../Bootstrap4.3.1/images/favicon.ico">
+    <link rel="stylesheet" href="../ssi-uploader/css/ssi-uploader.css"  media="all">
+    <link rel="stylesheet" href="../layui-v2.5.5/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../Bootstrap4.3.1/css/login.css">
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body>
+<div>
+    <div class="nav_title">
+        <span>
+            <img class="nav__title_logo" src="../Bootstrap4.3.1/image/favicon.ico"/>&nbsp;&nbsp;&nbsp;文 件 管 理 系 统 &nbsp;&nbsp;
+            <span style="font-size: 15px">
+                Madison
+            </span>
+        </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a style="font-size: 18px" href="javascript:void(0);" onclick="openUploadImg()">
+            <span>
+                上传照片
+            </span>
+        </a>
+        <a href="javascript:void(0);" class="nav_title_a_user">
+            <img src="../Bootstrap4.3.1/image/user.png" class="nav_title_user_ico"/>
+            <span id="user">
+            </span>
+        </a>
+        <a class="nav_title_a_user" href="javascript:void(0);" onclick="Logout()">
+            <span>
+                注销
+            </span>
+        </a>
+    </div>
+    <hr>
+</div>
+<!--<div class="nav_upload">
+    <input type="file" multiple id="ssi-upload"/>
+</div>
 <script>
-
+    $('#ssi-upload7').ssi_uploader({
+        url: '../upload/uploadImg',
+        locale: "cn",
+        preview: "true",
+        maxNumberOfFiles:10,//每次允许上传多少个文件。
+        data: {'username': localStorage.getItem('username')},
+        maxFileSize:10,//允许上传的最大文件尺寸。
+        allowed:['jpg', 'jpeg', 'png', 'bmp', 'gif'],//允许上传的文件类型。
+        dropZone: false,
+        onUpload: function () {
+        },
+        onEachUpload: function (fileInfo) {
+            console.log(fileInfo);
+        },
+        beforeUpload: function () {
+        },
+        beforeEachUpload: function (fileInfo, xhr) {
+            console.log(fileInfo);
+            console.log(xhr);
+        }
+    });
+</script>-->
+<script>
+    $(function () {
+        $("#user").html(username);
+    });
 </script>
 </body>
 </html>

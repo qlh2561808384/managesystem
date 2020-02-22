@@ -8,7 +8,7 @@ public interface LoginService {
 //    int login(String username,String password);
     Users login(String username, String password);
 
-    void register(String name,String password,String time);
+    void register(String name,String password,String time,String email);
 
     Users checkUsername(String name);
 

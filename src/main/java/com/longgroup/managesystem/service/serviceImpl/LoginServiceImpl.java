@@ -26,10 +26,11 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public void register(String name, String password, String time) {
+    public void register(String name, String password, String time,String email) {
         Users users = new Users();
         users.setUsername(name);
         users.setPassword(password);
+        users.setEmail(email);
         users.setCreatetime(dateUtil.get24HCurrentTime_Calendar("ymdhms"));
         loginMapper.insert(users);
     }

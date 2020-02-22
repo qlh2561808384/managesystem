@@ -51,10 +51,10 @@ public class LoginController {
     }
 
     @RequestMapping("/register")
-    public Result register(String name,String password,String time){
+    public Result register(String name,String password,String time,String email){
         Result result = null;
         try {
-            loginService.register(name,password,time);
+            loginService.register(name,password,time,email);
             result = new Result(true, "");
         } catch (Exception e) {
             result = new Result(false, e.getMessage());
@@ -68,7 +68,9 @@ public class LoginController {
         List<Users> list = new ArrayList<>();
         try {
             Users users = loginService.checkUsername(name);
-            list.add(users);
+            if (users != null) {
+                list.add(users);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

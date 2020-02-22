@@ -16,6 +16,7 @@ public class Users implements Serializable {
   private long id;
   private String username;
   private String password;
+  private String email;
   private String createtime;
   private long status;
 

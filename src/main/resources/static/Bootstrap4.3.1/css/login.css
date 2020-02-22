@@ -1,0 +1,37 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    background-image: url("../image/3.jpg");
+    /*background-color: #383a3c;*/
+}
+/*导航栏*/
+.nav_title{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.nav_title span {
+    font-size: 20px;
+    color: white;
+}
+.nav__title_logo {
+    margin-top: -5px;
+    width: 20px;
+}
+.nav_title_a_user {
+    float: right;
+    margin-right: 50px;
+}
+.nav_title_a_user span{
+    font-size: 18px;
+}
+.nav_title_user_ico {
+    width: 20px;
+}
+/*下载*/
+.nav_upload {
+    margin-left: 22px;
+    /*width: 200px;*/
+}
