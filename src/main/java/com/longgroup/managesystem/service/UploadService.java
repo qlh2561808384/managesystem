@@ -1,7 +1,8 @@
 package com.longgroup.managesystem.service;
 
-import org.springframework.stereotype.Service;
-
 
 public interface UploadService {
+    void saveImg(String username, String path);
+
+    String[] getImgPath(String username);
 }

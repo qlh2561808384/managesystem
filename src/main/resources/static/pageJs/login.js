@@ -31,6 +31,7 @@ let html = '<div class="nav_upload">\n' +
     '        allowed:[\'jpg\', \'jpeg\', \'png\', \'bmp\', \'gif\'],//允许上传的文件类型。\n' +
     '        dropZone: false,\n' +
     '        onUpload: function () {\n' +
+    '        layer.msg(\"上传成功/successful upload\",{time: 0,btn:[\"确定\"],success:function(layero) { layero.find(\'.layui-layer-btn\').css(\'text-align\', \'center\') },yes:function(index) { let par = parent.layer.getFrameIndex(window.name);parent.layer.close(par);window.parent.location.reload(); }})' +
     '        },\n' +
     '        onEachUpload: function (fileInfo) {\n' +
     '            console.log(fileInfo);\n' +
