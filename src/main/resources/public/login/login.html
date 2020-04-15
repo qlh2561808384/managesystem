@@ -47,6 +47,13 @@
     </div>
     <hr>
 </div>
+<!--
+    html img图片等比例缩放
+       解决方法:
+            在img标签里面只设置宽，不设置高，图片就会等比例缩放。
+-->
+<div id="imgShow">
+</div>
 <!--<div class="nav_upload">
     <input type="file" multiple id="ssi-upload"/>
 </div>
@@ -73,6 +80,28 @@
         }
     });
 </script>-->
+<script>
+    let api = {
+        getImgPath: (username) => {
+            return new Promise((resolve, reject) => {
+                AjaxPost('../upload/getImgPath', {name: username}, "", () => {
+                }, (data) => {
+                    resolve(data);
+                });
+            });
+        }
+    };
+    let img = "";
+    api.getImgPath(username).then((data) => {
+        $.each(data,function (i,d) {
+            img += "<img src=\"/images/" + username + "/" + d + "\" style=\"width: 10%\"/>";
+        });
+        $("#imgShow").append(img);
+    });
+
+
+
+</script>
 <script>
     $(function () {
         $("#user").html(username);
